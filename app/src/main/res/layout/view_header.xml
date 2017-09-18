@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/new_header_height"
+    android:background="@color/color_white">
+    <!--    android:src="@drawable/back"-->
+    <ImageView
+        android:id="@+id/view_header_back"
+        android:layout_width="60dp"
+        android:layout_height="@dimen/new_header_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/image_contentdescription"
+        android:scaleType="center"
+
+        />
+
+    <TextView
+        android:id="@+id/view_header_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/color_2f2f2f"
+        android:textSize="@dimen/sp_20" />
+
+    <ImageView
+        android:id="@+id/view_header_middle_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/image_contentdescription"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/view_header_right_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_21"
+        android:gravity="right|center_vertical"
+        android:textColor="@color/color_fe6813"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/view_header_right_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_21"
+        android:contentDescription="@string/image_contentdescription"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/new_title_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line" />
+</RelativeLayout>
