@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.jryg.instantcar.R;
 import com.jryg.instantcar.inter.BaseActivityInterface;
 import com.jryg.instantcar.manager.ActivityManager;
+import com.jryg.instantcar.utils.CustomDialog;
 
 /**
  * @version V1.0
@@ -31,6 +32,7 @@ import com.jryg.instantcar.manager.ActivityManager;
 public abstract class BaseTitleActivity extends FragmentActivity implements BaseActivityInterface, View.OnClickListener {
     protected Context mContext;
     protected Activity mActivity;
+    protected CustomDialog dialog;
 
     // 返回键
     protected ImageView mBackBtn;
@@ -54,6 +56,7 @@ public abstract class BaseTitleActivity extends FragmentActivity implements Base
     private void init(Bundle bundle) {
         mActivity = this;
         mContext = getApplicationContext();
+        dialog=new CustomDialog(this);
         //获取mActivity保存状态
         getSaveBundle(bundle);
         //获取上个页带过来的数据
@@ -122,6 +125,7 @@ public abstract class BaseTitleActivity extends FragmentActivity implements Base
 
     @Override
     protected void onDestroy() {
+        dismissProgressDialog();//这个要放在前面  销毁界面前必须让dialog消失
         super.onDestroy();
         ActivityManager.getInstance().removeActivity(this);//这个防止mActivity直接回到home页后  没有走onKeyDown中的removeActivity方法
         if (mActivity != null) {
@@ -141,6 +145,12 @@ public abstract class BaseTitleActivity extends FragmentActivity implements Base
         }
         if (mRightImageView != null) {
             mRightImageView = null;
+        }
+    }
+
+    private void dismissProgressDialog() {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
         }
     }
 
