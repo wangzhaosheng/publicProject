@@ -1,4 +1,4 @@
-package com.jryg.guide.utils;
+package com.jryg.instantcar.utils;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,8 +14,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import com.jryg.guide.inter.ImageCompressListener;
-
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -27,8 +25,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class ImageUtils {
     /**

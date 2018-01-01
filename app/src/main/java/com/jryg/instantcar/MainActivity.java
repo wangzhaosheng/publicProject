@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.jryg.instantcar.download.DownLoadActivity;
+import com.jryg.instantcar.okhttp.OkhttpActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void downloadFile(View v) {
         startActivity(new Intent(this, DownLoadActivity.class));
+    }
+
+    public void okhttp(View v) {
+        startActivity(new Intent(this, OkhttpActivity.class));
     }
 }
